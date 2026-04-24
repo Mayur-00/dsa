@@ -76,9 +76,17 @@ public:
             t1 = t1->next;
         };
 
-        t2->next = t1->next;
+        if (t1->next == nullptr)
+        {
+            t2->next = nullptr;
+            delete (t1);
+        }
+        else
+        {
+            t2->next = t1->next;
 
-        delete (t1);
+            delete (t1);
+        }
     }
     void PrintList()
     {
